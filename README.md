@@ -111,10 +111,10 @@ Please define it with your own words. We are expecting at least 3 distinct ideas
 Please name the parts of the URL below.
 [<img src="assets/URLanalysis.png" alt="parts of URL" />](assets/URLanalysis.png?raw=true)
 
-1:  
-2:  
-3:  
-4:  
-5:  
-6:  
-7:  
+1:  **scheme (identifies the protocol)**  
+2:  **subdomain**  
+3:  **domain name**  
+4:  **port number**  
+5:  **path**  
+6:  **query initializer character (always a '?')**  
+7:  **query string (e.g.** _param1=value1&param2=value2_ **)**  
