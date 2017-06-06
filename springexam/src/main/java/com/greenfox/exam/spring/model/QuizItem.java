@@ -9,12 +9,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity
 @Builder
 @Data
-@Entity
-public class QuestionAndAnswer {
+@NoArgsConstructor
+@AllArgsConstructor
+public class QuizItem {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

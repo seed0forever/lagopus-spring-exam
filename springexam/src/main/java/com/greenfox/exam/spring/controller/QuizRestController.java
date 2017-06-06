@@ -1,7 +1,8 @@
 package com.greenfox.exam.spring.controller;
 
-import com.greenfox.exam.spring.model.QuizWrapper;
-import com.greenfox.exam.spring.service.QuizWrapperService;
+import com.greenfox.exam.spring.model.dto.QuestionList;
+import com.greenfox.exam.spring.service.QuizService;
+import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,20 +10,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class QuizRestController {
 
-  private final QuizWrapperService quizWrapperService;
+  private final AtomicLong counter;
+  private final QuizService quizService;
 
   @Autowired
   public QuizRestController(
-          QuizWrapperService quizWrapperService) {
-    this.quizWrapperService = quizWrapperService;
+          QuizService quizService) {
+    this.counter = new AtomicLong();
+    this.quizService = quizService;
   }
 
   @GetMapping("/questions")
-  public QuizWrapper showQuestions() {
-
-    QuizWrapper quizWrapper = new QuizWrapper();
-    quizWrapperService.save(quizWrapper);
-
-    return quizWrapper;
+  public QuestionList showNewQuestions() {
+    QuestionList questionList = new QuestionList();
+    questionList.setId(counter.incrementAndGet());
+    quizService.fillWithRandomQuestions(5, questionList);
+    return questionList;
   }
 }
