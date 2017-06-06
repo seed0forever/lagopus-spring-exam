@@ -28,17 +28,6 @@ public class QuizService {
     }
   }
 
-//  public QuestionList showRandomQuestions(int amount,
-//          QuizWrapper quizWrapper) {
-//    while (quizWrapper.countQuestions() < amount) {
-//      QuizItem candidateQuestion = chooseRandomQuizItem();
-//      if (!quizWrapper.hasQuestion(candidateQuestion)) {
-//        quizWrapper.addQuestionAndAnswer(chooseRandomQuizItem());
-//      }
-//    }
-//    return quizWrapper;
-//  }
-
   private Question chooseRandomQuestion() {
     QuizItem chosenQuizItem = chooseRandomQuizItem();
     return Question.builder()
