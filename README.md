@@ -106,6 +106,16 @@ Your task is to create a RESTful quiz application with full of greenfox question
 
 Please define it with your own words. We are expecting at least 3 distinct ideas that you write here:
 
+**\[Answers\:]**  
+  
+1:  **If I want the inheritor classes to inherit concrete, already implemented methods from the abstract class.**  
+  
+2:  **If I want the inheritor classes to have common non-static fields.**  
+***(Fields of interfaces are always public, static, final.)***  
+
+3:  **If I want the inheritor classes to implement/inherit non-public methods.**  
+***(Interface methods must be implemented as public.)***  
+
 
 ### Analyzing URL
 Please name the parts of the URL below.
